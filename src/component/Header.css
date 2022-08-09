@@ -1,5 +1,9 @@
 header{
-    background-color:teal
+    background-color:teal;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .logo{
     text-align:center;

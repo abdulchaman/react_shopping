@@ -1,21 +1,30 @@
 import React, {Component} from 'react';
+import "./Header.css"
 
 class Header extends Component{
     constructor(){
         super();
         this.state ={
-            logo:"Amazon"
+            logo:"Amazon",
+            keyword:"foo"
         }
+    
     }
-    handleClick = (event) =>{
-        this.setState({logo:"Flipkart"})
+    handleChange = (event) =>{
+        // this.setState({logo:"Flipkart"});
+        // this.setState({keyword:event.target.value})
+        this.props.userInput(event.target.value);
     }
 
     render(){
         return(
             <>
-              <h1>{this.state.logo}</h1>  
-              <button onClick={this.handleClick}></button>
+           <header>
+           <h3 className='logo'>{this.state.logo}</h3>
+           <input type="text" onChange={this.handleChange}></input>
+          
+           </header>
+
             </>
         )
     }
